@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head> 
+<body>
+        <img src="converse.png" width="130">
+        <div class="w3-container">
+         
+    
+</body>
+
+</html>
+
+<style>
+    body{
+        margin: 0;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+.top{
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+}
+.top a{
+    float: left;
+    color:white;
+    text-align: center;
+    padding:20px 30px ;
+    text-decoration: none;
+    font-size: 17px;
+}
+.top a:hover{
+    background-color:none;
+    color:teal;
+}
+.top a.active{
+    background-color:none ;
+    color:teal;
+}
+body {background-color: white;}
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+<div class="top">
+    <a class="active" href="home.html">Home</a>
+    <a href="product.html">Product</a>
+    <a href="about.html">About</a>
+</div>
+<div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="mySlides" src="home01.jpg" style="width:100%">
+        <img class="mySlides" src="home02.jpg" style="width:100%">
+        <img class="mySlides" src="home03.jpg" style="width:100%">
+        <img class="mySlides" src="home04.jpg" style="width:100%">
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+          <div class="w3-left w3-hover-text-khaki top a:hover" onclick="plusDivs(-1)">&#10094;</div>
+          <div class="w3-right w3-hover-text-khaki top a:hover" onclick="plusDivs(1)">&#10095;</div>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+
+        </div>
+      </div>
+      
+      <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+      
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        x[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " w3-white";
+      }
+      </script>
